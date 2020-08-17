@@ -1,0 +1,70 @@
+{% extends 'cms/base.html' %}
+{% load static %}
+
+{% block title %}
+    添加员工
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content-header %}
+    <h1>添加员工</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-8">
+            <div class="box">
+                <div class="form-group">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="telephone-input">手机号码：</label>
+                            {% if staff %}
+                                <input type="text" class="form-control" name="telephone" value="{{ staff.telephone }}">
+                            {% else %}
+                                <input type="text" class="form-control" name="telephone">
+                            {% endif %}
+                        </div>
+
+                        <div class="checkbox">
+{#                            {% if staff %}#}
+{#                                {% for group in groups %}#}
+{#                                    <label style="margin-right:20px">#}
+{#                                        {% for sgroups in staff_groups %}#}
+{#                                            {% if sgroups.id == group.id %}#}
+{#                                                <input type="checkbox" name="groups" value="{{ group.id }}" checked>#}
+{#                                                {{ group.name }}#}
+{#                                            {% else %}#}
+{#                                                <input type="checkbox" name="groups" value="{{ group.id }}">#}
+{#                                                {{ group.name }}#}
+{#                                            {% endif %}#}
+{#                                        {% endfor %}#}
+{#                                    </label>#}
+{#                                {% endfor %}#}
+{#                            {% else %}#}
+                                {% for group in groups %}
+                                    <label style="margin-right: 20px;">
+                                        <input type="checkbox" name="groups" value="{{ group.id }}">{{ group.name }}
+                                    </label>
+                                {% endfor %}
+{#                            {% endif %}#}
+                        </div>
+
+                    </div>
+                    <div class="box-footer">
+                        <button class="btn btn-primary pull-right">立即添加</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

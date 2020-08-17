@@ -1,0 +1,40 @@
+{% extends 'base/front_base.html' %}
+{% load static %}
+
+{% block title %}
+    我的文档
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/payinfo/payinfo.min.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="wrapper">
+            <div class="main-content-wrapper">
+                <div class="advertise-group">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                </div>
+
+                <ul class="document-list">
+                    {% for payinfo in payinfos %}
+                        <li>
+                            <a href="{% url 'payinfo:download' %}?payinfo_id={{ payinfo.id }}">
+                                <div class="category-group"></div>
+
+                                <div class="document-info">
+                                    <p class="document-title">{{ payinfo.title }}</p>
+                                    <p class="document-desc">{{ payinfo.profile }}</p>
+                                    <p class="document-price"></p>
+                                </div>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
