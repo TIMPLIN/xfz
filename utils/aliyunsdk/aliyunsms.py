@@ -9,15 +9,9 @@ from aliyunsdkcore.http import method_type as MT
 from aliyunsdkcore.http import format_type as FT
 import json
 
-"""
-短信业务调用接口示例，版本号：v20170525
 
-Created on 2017-06-12
-
-"""
-
-ACCESS_KEY_ID = "LTAIjQyHWa5Rusrp"
-ACCESS_KEY_SECRET = "AwiY3vtXQECnPyyesuQ2CKUReokYtI"
+# ACCESS_KEY_ID = "LTAIjQyHWa5Rusrp"
+# ACCESS_KEY_SECRET = "AwiY3vtXQECnPyyesuQ2CKUReokYtI"
 
 
 # 注意：不要更改
@@ -31,7 +25,7 @@ region_provider.add_endpoint(PRODUCT_NAME, REGION, DOMAIN)
 
 def send_sms(phone_numbers, code):
     business_id = uuid.uuid1()
-    sign_name = "小饭桌"
+    sign_name = "验证码"
     template_code = ""
     template_param = json.dumps({'code': code})
 
