@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import sys
 from aliyunsdkdysmsapi.request.v20170525 import SendSmsRequest
 from aliyunsdkdysmsapi.request.v20170525 import QuerySendDetailsRequest
@@ -10,11 +9,8 @@ from aliyunsdkcore.http import format_type as FT
 import json
 
 
-# ACCESS_KEY_ID = "LTAIjQyHWa5Rusrp"
-# ACCESS_KEY_SECRET = "AwiY3vtXQECnPyyesuQ2CKUReokYtI"
 
 
-# 注意：不要更改
 REGION = "cn-hangzhou"
 PRODUCT_NAME = "Dysmsapi"
 DOMAIN = "dysmsapi.aliyuncs.com"
