@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys
 from aliyunsdkdysmsapi.request.v20170525 import SendSmsRequest
 from aliyunsdkdysmsapi.request.v20170525 import QuerySendDetailsRequest
@@ -9,13 +10,15 @@ from aliyunsdkcore.http import format_type as FT
 import json
 
 
+# AK_ID = "LTAIjQyHWa5Rusrp"
+# AK_SECRET = "AwiY3vtXQECnPyyesuQ2CKUReokYtI"
 
 
 REGION = "cn-hangzhou"
 PRODUCT_NAME = "Dysmsapi"
 DOMAIN = "dysmsapi.aliyuncs.com"
 
-acs_client = AcsClient(ACCESS_KEY_ID, ACCESS_KEY_SECRET, REGION)
+acs_client = AcsClient(AK_ID, AK_SECRET, REGION)
 region_provider.add_endpoint(PRODUCT_NAME, REGION, DOMAIN)
 
 
